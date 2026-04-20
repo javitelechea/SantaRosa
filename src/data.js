@@ -11,6 +11,7 @@ export const USERS = [
   { email: "mnzapata1993@gmail.com", role: "member" },
   { email: "coordinacionsrr.hockey@gmail.com", role: "member" },
   { email: "javitelechea@hotmail.com", role: "member" },
+  { email: "agrimensorag@gmail.com", role: "member" },
 ];
 
 // Contraseña única para todo el club (uso interno)
