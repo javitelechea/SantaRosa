@@ -30,7 +30,7 @@ export const CLASSES = [
     date: "2026-03-05",
     title: "Diseño de entrenamientos",
     description: "Clase 1A: estructura y metodología para planificar entrenamientos efectivos.",
-    videoUrl: "https://www.youtube.com/embed/bu33hfpMPR0",
+    videoUrl: "",
     pdfUrl: "/pdfs/clase-1a.pdf",
     summary: `## Resumen de la clase
 
@@ -50,7 +50,7 @@ Un entrenamiento efectivo no es una suma de ejercicios: es una secuencia diseña
     date: "2026-03-05",
     title: "Introducción a los principios del juego",
     description: "Clase 1B: qué son los principios de juego y cómo aplicarlos en el club.",
-    videoUrl: "",
+    videoUrl: "https://www.youtube.com/embed/bu33hfpMPR0",
     pdfUrl: "/pdfs/clase-1b.pdf",
     summary: `## Resumen de la clase
 
