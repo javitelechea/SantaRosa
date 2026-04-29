@@ -1,4 +1,6 @@
+import { useMemo, useState } from "react";
 import { CLASSES } from "../data";
+import { addAuthorizedEmail, getAuthorizedUsers } from "../authUsers";
 import clubShield from "../escudo-santa-rosa-rugby.png";
 import "../styles/home.css";
 
@@ -16,6 +18,31 @@ export default function Home({ user, onLogout, onOpenClass, onOpenClassesIndex, 
   const sorted = [...CLASSES].sort((a, b) => new Date(b.date) - new Date(a.date));
   const latest = sorted[0];
   const rest = sorted.slice(1);
+  const [newEmail, setNewEmail] = useState("");
+  const [adminMsg, setAdminMsg] = useState("");
+  const [adminError, setAdminError] = useState("");
+  const [adminRefreshKey, setAdminRefreshKey] = useState(0);
+  const isAdmin = user.email === "javitelechea@hotmail.com" || user.role === "admin";
+
+  const authorizedUsers = useMemo(() => getAuthorizedUsers(), [adminRefreshKey]);
+
+  const handleAddEmail = (e) => {
+    e.preventDefault();
+    setAdminMsg("");
+    setAdminError("");
+    const result = addAuthorizedEmail(newEmail);
+    if (!result.ok) {
+      if (result.reason === "exists") {
+        setAdminError("Ese mail ya está autorizado.");
+      } else {
+        setAdminError("Ingresá un mail válido.");
+      }
+      return;
+    }
+    setAdminMsg("Mail agregado correctamente.");
+    setNewEmail("");
+    setAdminRefreshKey((v) => v + 1);
+  };
 
   return (
     <div className="home">
@@ -88,6 +115,35 @@ export default function Home({ user, onLogout, onOpenClass, onOpenClassesIndex, 
                   <span className="class-row-arrow">→</span>
                 </div>
               ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {isAdmin && (
+          <section className="admin-section">
+            <p className="section-label">Administración</p>
+            <div className="admin-shell">
+              <div className="admin-header">
+                <h2>Agregar mails autorizados</h2>
+                <p>Los mails cargados acá quedan guardados en este navegador y ya pueden ingresar con la contraseña común.</p>
+              </div>
+              <form className="admin-form" onSubmit={handleAddEmail}>
+                <input
+                  type="email"
+                  value={newEmail}
+                  onChange={(e) => setNewEmail(e.target.value)}
+                  placeholder="nuevo.mail@ejemplo.com"
+                  required
+                />
+                <button type="submit">Agregar mail</button>
+              </form>
+              {adminMsg && <p className="admin-msg ok">{adminMsg}</p>}
+              {adminError && <p className="admin-msg error">{adminError}</p>}
+              <div className="admin-list">
+                {authorizedUsers.map((u) => (
+                  <div key={u.email} className="admin-list-item">{u.email}</div>
+                ))}
               </div>
             </div>
           </section>

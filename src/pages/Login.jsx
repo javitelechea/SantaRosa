@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { USERS, CLUB_PASSWORD } from "../data";
+import { CLUB_PASSWORD } from "../data";
+import { getAuthorizedUsers } from "../authUsers";
 import clubShield from "../escudo-santa-rosa-rugby.png";
 import "../styles/login.css";
 
@@ -14,7 +15,8 @@ export default function Login({ onLogin }) {
     setError("");
     setLoading(true);
     setTimeout(() => {
-      const user = USERS.find(
+      const users = getAuthorizedUsers();
+      const user = users.find(
         (u) => u.email === email.trim().toLowerCase()
       );
       if (user && password === CLUB_PASSWORD) {

@@ -10,7 +10,7 @@ export const USERS = [
   { email: "consumacias83@gmail.com", role: "member" },
   { email: "mnzapata1993@gmail.com", role: "member" },
   { email: "coordinacionsrr.hockey@gmail.com", role: "member" },
-  { email: "javitelechea@hotmail.com", role: "member" },
+  { email: "javitelechea@hotmail.com", role: "admin" },
   { email: "agrimensorag@gmail.com", role: "member" },
   { email: "cgigena@gmail.com", role: "member" },
 ];
@@ -30,7 +30,7 @@ export const CLASSES = [
     date: "2026-03-05",
     title: "Diseño de entrenamientos",
     description: "Clase 1A: estructura y metodología para planificar entrenamientos efectivos.",
-    videoUrl: "",
+    videoUrl: "https://www.youtube.com/embed/bu33hfpMPR0",
     pdfUrl: "/pdfs/clase-1a.pdf",
     summary: `## Resumen de la clase
 
@@ -105,5 +105,21 @@ Cuando el equipo hace la cancha grande, obliga al rival a elegir qué proteger y
 Sostener la posesión no depende solo de quien tiene la bocha: depende de la calidad del pase, la postura y las opciones que ofrece todo el equipo.
 
 **Concepto central:** posesión útil = técnica de pase + recepción orientada + lectura del juego para decidir mejor.`,
+  },
+  {
+    id: 5,
+    number: "4",
+    date: "2026-04-28",
+    title: "Progresar",
+    description: "Clase 4 del ciclo de capacitaciones.",
+    videoUrl: "",
+    pdfUrl: "",
+    summary: `## Resumen de la clase
+
+### Temas tratados
+- Pendiente de completar.
+
+### Puntos clave
+Resumen en construcción.`,
   },
 ];
