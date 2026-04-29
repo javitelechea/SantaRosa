@@ -50,7 +50,7 @@ Un entrenamiento efectivo no es una suma de ejercicios: es una secuencia diseña
     date: "2026-03-05",
     title: "Introducción a los principios del juego",
     description: "Clase 1B: qué son los principios de juego y cómo aplicarlos en el club.",
-    videoUrl: "https://www.youtube.com/embed/bu33hfpMPR0",
+    videoUrl: "",
     pdfUrl: "/pdfs/clase-1b.pdf",
     summary: `## Resumen de la clase
 
@@ -112,7 +112,7 @@ Sostener la posesión no depende solo de quien tiene la bocha: depende de la cal
     date: "2026-04-28",
     title: "Progresar",
     description: "Clase 4 del ciclo de capacitaciones.",
-    videoUrl: "",
+    videoUrl: "https://www.youtube.com/embed/bu33hfpMPR0",
     pdfUrl: "",
     summary: `## Resumen de la clase
 
